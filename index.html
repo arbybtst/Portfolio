@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Your Name • Portfolio</title>
+  <meta name="description" content="One-page portfolio with Home, Skills, Education, Experience, Contact, and Profile Picture sections. HTML & CSS only." />
+  <style>
+    /* ===== Base ===== */
+    :root{
+      --bg:#0f1220;        
+      --panel:#171a2b;     
+      --ink:#e9eef7;       
+      --muted:#a6b0c3;     
+      --brand:#6dc6ff;     
+      --accent:#9b7bff;    
+      --ring:0 0 0 3px rgba(109,198,255,.25);
+      --radius:18px;
+      --shadow:0 10px 30px rgba(0,0,0,.35);
+      --max:1100px;
+    }
+    @media (prefers-color-scheme: light){
+      :root{--bg:#f6f8fc;--panel:#fff;--ink:#0b1020;--muted:#536079;--brand:#1a73e8;--accent:#6d28d9;--shadow:0 10px 24px rgba(9,16,33,.08)}
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans"; background:var(--bg); color:var(--ink)}
+    a{color:var(--brand); text-decoration:none}
+    a:hover{text-decoration:underline}
+    .container{max-width:var(--max); margin:0 auto; padding:24px}
+
+    /* ===== Header / Nav ===== */
+    header{position:sticky; top:0; z-index:40; backdrop-filter:saturate(180%) blur(10px); background:color-mix(in oklab, var(--bg) 85%, transparent); border-bottom:1px solid color-mix(in oklab, var(--ink) 15%, transparent)}
+    .nav{display:flex; align-items:center; justify-content:space-between; gap:16px}
+    .brand{display:flex; align-items:center; gap:12px}
+    .logo{width:36px; height:36px; border-radius:10px; background:linear-gradient(135deg,var(--brand),var(--accent)); box-shadow:var(--shadow)}
+    .name{font-weight:900; letter-spacing:.3px}
+    nav a{display:inline-block; padding:10px 12px; border-radius:12px}
+    nav a:hover{background:color-mix(in oklab, var(--panel) 75%, transparent)}
+
+    /* ===== Generic cards/sections ===== */
+    .card{background:var(--panel); border:1px solid color-mix(in oklab, var(--ink) 12%, transparent); border-radius:var(--radius); box-shadow:var(--shadow)}
+    .pad{padding:28px}
+    section{scroll-margin-top:80px; margin-top:32px}
+    .sec-head{display:flex; align-items:center; justify-content:space-between; margin-bottom:14px}
+    .sec-head h2{margin:0; font-size:22px}
+
+    /* ===== Hero (Home) ===== */
+    .hero{display:grid; grid-template-columns: 1.2fr .8fr; gap:24px; align-items:center}
+    .title{font-size:clamp(28px,4vw,48px); line-height:1.1; font-weight:900; margin:0}
+    .subtitle{color:var(--muted); margin:10px 0 0}
+    .chips{display:flex; flex-wrap:wrap; gap:10px; margin-top:16px}
+    .chip{font-size:14px; padding:8px 12px; border-radius:999px; background:color-mix(in oklab, var(--panel) 80%, transparent); border:1px dashed color-mix(in oklab, var(--ink) 18%, transparent)}
+
+    /* ===== Grids ===== */
+    .grid{display:grid; gap:14px}
+    .two{grid-template-columns:1fr 1fr}
+    .three{grid-template-columns:repeat(3,1fr)}
+
+    /* ===== Lists ===== */
+    ul{padding-left:18px}
+    li{margin:6px 0}
+
+   
+  </style>
+</head>
+<body>
+  <!-- ===== Header / Nav ===== -->
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <div class="photo" style="width:150px; height:150px; border-radius:50%; overflow:hidden; border:2px solid var(--brand);">
+        <img src="Prof.jpg" alt="Profile photo" style="width:100%; height:100%; object-fit:cover;">
+      </div>
+        <div>
+          <div class="name">Arby Upialda Bautista</div>
+          <div style="color:var(--muted); font-size:20px">Game Developer • Graphic Designer</div>
+        </div>
+      </div>
+      <nav aria-label="Primary">
+        <a href="#home">Home</a>
+        <a href="#skills">Skills</a>
+        <a href="#education">Education</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+        </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- ===== Home ===== -->
+    <section id="home" class="hero">
+      <div class="card pad">
+        <h1 class="title">Hi, I’m <span style="background:linear-gradient(135deg,var(--brand),var(--accent)); -webkit-background-clip:text; background-clip:text; color:transparent">Arby Bautista</span></h1>
+        <p class="subtitle">I currently studying at West Negros University, I'm a Bachelor of science in information technology(BSIT) students with a basic knowledge in Computer programming and also in graphic design. I'm actually interested in improving my skills in designing and also in programming field.</p>
+        <div class="chips">
+          <span class="chip">📍Silay City, Philippines</span>
+          <a class="chip" href="Arbybautista5@gmail.com">✉️ Arbybautista5@gmail.com</a>
+          <a class="chip" href="https://github.com/" target="_blank" rel="">https://github.com/</a>
+        </div>
+      </div>
+      <div class="card pad">
+        <h3 style="margin:0 0 10px">Achievements</h3>
+        <ul style="margin:0; color:var(--muted)">
+          <li><strong>Robotics</strong> 1st place compete in warbots battle</li>
+          <li><strong>Graphic design</strong> certificate</li>
+          <li><strong>Programmers' Guild</strong> certificate</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===== Skills ===== -->
+    <section id="skills">
+      <div class="sec-head">
+        <h2>Skills</h2>
+      </div>
+      <div class="grid three">
+        <div class="card pad">
+          <h3>Technical</h3>
+          <ul>
+            <li>HTML, CSS, Tailwind</li>
+            <li>React / React Native,</li>
+            <li>Java</li>
+          </ul>
+        </div>
+        <div class="card pad">
+          <h3>Tools</h3>
+          <ul>
+            <li>Figma, GitHub</li>
+            <li>VS Code</li>
+            
+          </ul>
+        </div>
+        <div class="card pad">
+          <h3>Skills</h3>
+          <ul>
+            <li>Basic knowledge in Technical also for tools</li>
+           
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Education ===== -->
+    <section id="education">
+      <div class="sec-head">
+        <h2>Education</h2>
+      </div>
+      <div class="grid two">
+        <div class="card pad">
+          <h3>Degree / Program — School</h3>
+          <p class="muted">Bachelor of Science in Information Technology, from STI West Negros University and currently studying </p>
+        </div>
+        <div class="card pad">
+          <h3>Certifications</h3>
+          <ul>
+            <li>dean's list, 1st year 2nd sem</li>
+            <li>Certification for graphic design</li>
+            <li>Certification for programmers guild</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Experience ===== -->
+    <section id="experience">
+      <div class="sec-head">
+        <h2>Experience</h2>
+      </div>
+      <div class="grid two">
+        <div class="card pad">
+          <h3>Capstone Project</h3>
+          <p class="muted"><em>3rd year 2nd sem – Present • Silay City, Philippines</em></p>
+          <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
+        </div>
+        <div class="card pad">
+          <h3>Previous Title — Company</h3>
+          <p class="muted"><em>Month YYYY – Month YYYY • City, Country</em></p>
+          <ul>
+            <li>SOON</li>
+            <li></li>
+            <li></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Contact ===== -->
+    <section id="contact">
+      <div class="sec-head">
+        <h2>Contact</h2>
+      </div>
+      <div class="grid two">
+        <div class="card pad">
+          <h3>Let’s work together</h3>
+          <p>Open to full‑time, contract, or freelance opportunities.</p>
+          <ul>
+            <li>Email: <a href="">Arbybautista5@gmail.com</a></li>
+            <li>Phone: <a href="">09632190999</a></li>
+            <li>Website: <a href="" target="_blank" rel=""></a></li>
+          </ul>
+        </div>
+        <div class="card pad">
+          <h3>Social</h3>
+          <ul>
+            <li>Instagram: <a href="" target="_blank" rel="">https://www.instagram.com/accounts/login/?hl=en</a></li>
+            <li>GitHub: <a href="" target="_blank" rel="">https://github.com/</a></li>
+            <li>Facebook: <a href="" target="_blank" rel="">https://web.facebook.com/</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    
+  </footer>
+</body>
+</html>
